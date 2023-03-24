@@ -1,4 +1,4 @@
-# Project TitleCancel changes
+# Project Title
 
 Title of your project
 
@@ -8,24 +8,20 @@ A brief description of your project and what it does.
 
 ## Installation
 
-A step-by-step guide on how to install and run your project. Include any dependencies that need to be installed and any configuration that needs to be done.
+1. Clone the repository.
 
-## Usage
+$ git clone https://github.com/Sanchay-T/FEXP.git
 
-Explain how to use your project. Provide examples and screenshots if necessary.
 
-## Contributing
+2. Create a virtual environment.
 
-Explain how people can contribute to your project. Include guidelines on how to submit pull requests and report issues.
+$ python -m venv env
 
-## License
+3. Activate the virtual environment.
 
-Specify the license under which your project is released.
+$ source env/bin/activate
 
-## Credits
+4. Install the requirements.
 
-List any resources that you used in creating your project.
+$ pip install -r requirements.txt
 
-## Contact
-
-Provide contact information for people who have questions or feedback about your project.
