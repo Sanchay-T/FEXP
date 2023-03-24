@@ -1,32 +1,31 @@
-Project Title
-The project title should be a concise and descriptive phrase that summarizes the purpose of the project. This is the first thing that people will see when they visit your project's repository, so it should be clear and attention-grabbing.
+# Project TitleCancel changes
 
-Description
-A brief description of your project follows the title. In a few sentences, explain what your project does and why it's useful.
+Title of your project
 
-Getting Started
-Dependencies
-List any dependencies that are required to run the project. Include both the name and version number of each dependency.
+## Description
 
-Installing
-Provide a step-by-step series of examples that tell you how to get a development environment running.
+A brief description of your project and what it does.
 
-Executing program
-Describe how to run the program. For example:
+## Installation
 
-Copy code
-python app.py
-Help
-Any advice for common problems or issues.
+A step-by-step guide on how to install and run your project. Include any dependencies that need to be installed and any configuration that needs to be done.
 
-Authors
-List the authors of the project and their respective contributions.
+## Usage
 
-Version History
-Provide a list of the version releases of your project and what changes were made in each release.
+Explain how to use your project. Provide examples and screenshots if necessary.
 
-License
-This project is licensed under the [Name Here] License - see the LICENSE.md file for details.
+## Contributing
 
-Acknowledgments
-List any acknowledgments or resources that were helpful in creating this project.
+Explain how people can contribute to your project. Include guidelines on how to submit pull requests and report issues.
+
+## License
+
+Specify the license under which your project is released.
+
+## Credits
+
+List any resources that you used in creating your project.
+
+## Contact
+
+Provide contact information for people who have questions or feedback about your project.
