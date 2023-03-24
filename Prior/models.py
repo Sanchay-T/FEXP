@@ -7,7 +7,7 @@ from django.utils.text import slugify
 
 class Category(models.Model):
     title = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, blank=True, unique=True)
     thumbnail = models.ImageField(upload_to="categories/%Y/%m/%d")
 
     class Meta:
@@ -23,7 +23,7 @@ class Course(models.Model):
         Category, related_name="courses", on_delete=models.CASCADE
     )
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, blank=True, unique=True)
     thumbnail = models.ImageField(upload_to="courses/thumbnails")
     sub_title = models.CharField(max_length=100)
     video_intro_url = models.CharField(max_length=100)
@@ -41,7 +41,7 @@ class Section(models.Model):
         Course, related_name="sections", on_delete=models.CASCADE
     )
     title = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, blank=True, unique=True)
     description = models.TextField(blank=True, null=True)
     position = models.IntegerField()
 
@@ -56,7 +56,7 @@ class Video(models.Model):
     video_url = models.CharField(max_length=100)
     thumbnail = models.ImageField(upload_to="lessons/photos/%Y/%m/%d")
     title = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, blank=True, unique=True)
     description = models.TextField(blank=True, null=True)
     position = models.IntegerField()
 
@@ -64,6 +64,14 @@ class Video(models.Model):
         return self.title
 
 
+models_to_connect = [Category, Course, Section, Video]
+
+
 def pre_save_categories(sender, instance, *args, **kwargs):
     if not instance.slug:
-        instance.slug = slugify(instance.title)
+        slug_base = instance.title if hasattr(instance, "title") else instance.name
+        instance.slug = slugify(slug_base)
+
+
+for model in models_to_connect:
+    pre_save.connect(pre_save_categories, sender=model)
