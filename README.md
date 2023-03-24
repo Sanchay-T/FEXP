@@ -11,7 +11,7 @@ A brief description of your project and what it does.
 1. Clone the repository.
 
 ```
-$git clone https://github.com/Sanchay-T/FEXP.git
+$ git clone https://github.com/Sanchay-T/FEXP.git
 ```
 
 2. Create a virtual environment.
